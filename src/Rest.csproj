@@ -19,19 +19,23 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="icon.png" Pack="true" PackagePath="" />
-		<PackageReference Condition="'$(Configuration)'=='Release'" Include="Vysn.Commons" Version="0.0.*" />
-		<ProjectReference Condition="'$(Configuration)'=='Debug'" Include="..\..\Commons\src\Commons.csproj" />
+		<None Include="icon.png" Pack="true" PackagePath=""/>
+		<PackageReference Condition="'$(Configuration)'=='Release'" Include="Vysn.Commons" Version="0.0.*"/>
+		<ProjectReference Condition="'$(Configuration)'=='Debug'" Include="..\..\Commons\src\Commons.csproj"/>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="AuditLog" />
-		<Folder Include="Channel" />
-		<Folder Include="Emoji" />
-		<Folder Include="Guild" />
-		<Folder Include="Invite" />
-		<Folder Include="User" />
-		<Folder Include="Voice" />
+		<Folder Include="AuditLog"/>
+		<Folder Include="Channel"/>
+		<Folder Include="Emoji"/>
+		<Folder Include="Guild"/>
+		<Folder Include="Invite"/>
+		<Folder Include="User"/>
+		<Folder Include="Voice"/>
 	</ItemGroup>
+
+	<PropertyGroup>
+		<RestoreAdditionalProjectSources>https://www.myget.org/F/yucked/api/v3/index.json</RestoreAdditionalProjectSources>
+	</PropertyGroup>
 
 </Project>
