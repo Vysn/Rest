@@ -29,7 +29,6 @@
 		<Folder Include="Channel" />
 		<Folder Include="Emoji" />
 		<Folder Include="Guild" />
-		<Folder Include="Invite" />
 	</ItemGroup>
 
 	<PropertyGroup>
