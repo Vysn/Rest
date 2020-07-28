@@ -27,7 +27,6 @@
 	<ItemGroup>
 		<Folder Include="AuditLog" />
 		<Folder Include="Channel" />
-		<Folder Include="Emoji" />
 		<Folder Include="Guild" />
 	</ItemGroup>
 
