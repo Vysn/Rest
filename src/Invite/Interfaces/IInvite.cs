@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using Vysn.Rest.Attributes;
-using Vysn.Rest.Attributes.Enums;
 using Vysn.Rest.Invite.Structures;
 
 namespace Vysn.Rest.Invite.Interfaces {
@@ -14,7 +13,7 @@ namespace Vysn.Rest.Invite.Interfaces {
         /// <param name="inviteCode"></param>
         /// <param name="withCounts">Whether the invite should contains approxiamate member counts.</param>
         /// <returns><see cref="InviteStructure"/></returns>
-        [Route(HttpType.GET, "/invites/{inviteCode}")]
+        [Get( "/invites/{inviteCode}")]
         Task<InviteStructure> GetAsync(string inviteCode, bool withCounts = false);
 
         /// <summary>
@@ -22,7 +21,7 @@ namespace Vysn.Rest.Invite.Interfaces {
         /// </summary>
         /// <param name="inviteCode"></param>
         /// <returns><see cref="InviteStructure"/></returns>
-        [Route(HttpType.DELETE, "/invites/{inviteCode}")]
+        [Delete( "/invites/{inviteCode}")]
         Task<InviteStructure> DeleteAsync(string inviteCode);
     }
 }

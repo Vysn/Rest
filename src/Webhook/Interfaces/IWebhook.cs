@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Vysn.Commons;
 using Vysn.Rest.Attributes;
-using Vysn.Rest.Attributes.Enums;
 using Vysn.Rest.Webhook.Params;
 using Vysn.Rest.Webhook.Structures;
 
@@ -20,7 +19,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// <param name="avatarPath"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">Throws when webhook name is 'clyde'.</exception>
-        [Route(HttpType.POST, "/channels/{channelId}/webhooks")]
+        [Post("/channels/{channelId}/webhooks")]
         Task<Optional<WebhookStructure>> CreateAsync(Snowflake channelId, string name, string avatarPath);
 
         /// <summary>
@@ -28,7 +27,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// </summary>
         /// <param name="channelId"></param>
         /// <returns></returns>
-        [Route(HttpType.GET, "/channels/{channelId}/webhooks")]
+        [Get("/channels/{channelId}/webhooks")]
         Task<ICollection<WebhookStructure>> GetChannelHooksAsync(Snowflake channelId);
 
         /// <summary>
@@ -36,7 +35,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// </summary>
         /// <param name="guildId"></param>
         /// <returns></returns>
-        [Route(HttpType.GET, "/guilds/{guildId}/webhooks")]
+        [Get("/guilds/{guildId}/webhooks")]
         Task<ICollection<WebhookStructure>> GetGuildHooksAsync(Snowflake guildId);
 
         /// <summary>
@@ -44,7 +43,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// </summary>
         /// <param name="webhookId"></param>
         /// <returns></returns>
-        [Route(HttpType.GET, "/webhooks/{webookId}")]
+        [Get("/webhooks/{webookId}")]
         Task<WebhookStructure> GetAsync(Snowflake webhookId);
 
         /// <summary>
@@ -53,7 +52,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// <param name="webhookId"></param>
         /// <param name="webhookToken"></param>
         /// <returns></returns>
-        [Route(HttpType.GET, "/webhooks/{webookId}/{webhookToken}")]
+        [Get("/webhooks/{webookId}/{webhookToken}")]
         Task<WebhookStructure> GetAsync(Snowflake webhookId, string webhookToken);
 
         /// <summary>
@@ -62,7 +61,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// <param name="webookId"></param>
         /// <param name="modifyParams"></param>
         /// <returns></returns>
-        [Route(HttpType.PATCH, "/webhooks/{webhookId}")]
+        [Patch("/webhooks/{webhookId}")]
         Task<WebhookStructure> ModifyAsync(Snowflake webookId, WebhookModifyParams modifyParams);
 
         /// <summary>
@@ -72,7 +71,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// <param name="webhookToken"></param>
         /// <param name="modifyParams"></param>
         /// <returns></returns>
-        [Route(HttpType.PATCH, "/webhooks/{webhookId}/{webhookToken}")]
+        [Patch("/webhooks/{webhookId}/{webhookToken}")]
         Task<WebhookStructure> ModifyAsync(Snowflake webhookId, string webhookToken, WebhookModifyParams modifyParams);
 
         /// <summary>
@@ -80,7 +79,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// </summary>
         /// <param name="webhookId"></param>
         /// <returns></returns>
-        [Route(HttpType.DELETE, "/webhooks/{webhookId}")]
+        [Delete("/webhooks/{webhookId}")]
         Task DeleteAsync(Snowflake webhookId);
 
         /// <summary>
@@ -89,7 +88,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// <param name="webhookId"></param>
         /// <param name="webhookToken"></param>
         /// <returns></returns>
-        [Route(HttpType.DELETE, "/webhooks/{webhookId}/{webhookToken}")]
+        [Delete("/webhooks/{webhookId}/{webhookToken}")]
         Task DeleteAsync(Snowflake webhookId, string webhookToken);
 
         /// <summary>
@@ -99,7 +98,7 @@ namespace Vysn.Rest.Webhook.Interfaces {
         /// <param name="webhookToken"></param>
         /// <param name="executeParams"></param>
         /// <returns></returns>
-        [Route(HttpType.POST, "/webhooks/{webhookId}/{webhookToken}")]
+        [Post("/webhooks/{webhookId}/{webhookToken}")]
         Task ExecuteAsync(Snowflake webhookId, string webhookToken, WebhookExecuteParams executeParams);
     }
 }
